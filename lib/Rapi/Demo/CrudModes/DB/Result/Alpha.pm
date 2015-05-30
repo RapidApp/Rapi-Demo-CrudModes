@@ -16,37 +16,32 @@ __PACKAGE__->table("alpha");
 __PACKAGE__->add_columns(
   "id",
   { data_type => "integer", is_auto_increment => 1, is_nullable => 0 },
-  "value_1",
+  "string1",
   {
     data_type => "varchar",
     default_value => \"null",
     is_nullable => 1,
     size => 32,
   },
-  "value_2",
+  "string2",
   {
     data_type => "varchar",
     default_value => \"null",
     is_nullable => 1,
     size => 64,
   },
-  "int_3",
-  { data_type => "integer", default_value => \"null", is_nullable => 1 },
-  "decimal_4",
-  {
-    data_type => "decimal",
-    default_value => \"null",
-    is_nullable => 1,
-    size => [8, 2],
-  },
-  "datetime_5",
-  { data_type => "datetime", default_value => \"null", is_nullable => 1 },
+  "number",
+  { data_type => "float", default_value => \"null", is_nullable => 1 },
+  "bool",
+  { data_type => "boolean", default_value => 0, is_nullable => 0 },
+  "date",
+  { data_type => "date", default_value => \"null", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-05-30 05:36:47
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GNavohqJEfFGiEjfOkDvqA
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-05-30 07:42:40
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Fg7/PezjtMkV2pugtTyVrQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
