@@ -40,13 +40,13 @@ __PACKAGE__->add_columns(
     size => [8, 2],
   },
   "datetime_5",
-  { data_type => "datetime", is_nullable => 0 },
+  { data_type => "datetime", default_value => \"null", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-05-30 05:32:53
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:61GB5UHTUCMxUzoM/kodJw
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-05-30 05:36:47
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GNavohqJEfFGiEjfOkDvqA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

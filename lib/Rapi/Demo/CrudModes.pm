@@ -52,10 +52,9 @@ sub _build_config {
   return {
     'RapidApp' => {
       local_assets_dir => $loc_assets_dir,
-      load_modules => {
-
-
-      }
+      #load_modules => {
+      #
+      #}
     },
 
     'Controller::RapidApp::Template' => {
