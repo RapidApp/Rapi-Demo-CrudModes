@@ -52,9 +52,35 @@ sub _build_config {
   return {
     'RapidApp' => {
       local_assets_dir => $loc_assets_dir,
-      #load_modules => {
-      #
-      #}
+      load_modules => {
+        
+        # Default - everything instant:
+        'alpha_grid' => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
+        
+        # Alternate -  nothing instant
+        'alpha_grid_save' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
+          params => {
+            confirm_on_destroy => 1,
+            persist_immediately => {
+              create => 0, update => 0, destroy => 0
+            }
+          }
+        },
+        
+         # Mixed - only 'create' instant
+        'alpha_grid_mixed' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
+          params => {
+            confirm_on_destroy => 0,
+            persist_immediately => {
+              create => 1, update => 0, destroy => 0
+            }
+          }
+        }
+        
+      
+      }
     },
 
     'Controller::RapidApp::Template' => {
