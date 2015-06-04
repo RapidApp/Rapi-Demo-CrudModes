@@ -67,6 +67,10 @@ sub _build_base_config {
 
       }
     },
+    'Plugin::RapidApp::TabGui' => {
+      navtree_init_width => 180,
+      dashboard_url      => '/tple/dashboard',
+    },
 
     'Controller::RapidApp::Template' => {
       include_paths => $self->_template_include_paths,

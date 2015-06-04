@@ -20,13 +20,13 @@ sub _auto_populate {
   
   $self->resultset('Alpha')->populate([ 
   
-    [qw/string1                string2         number   bool    date/         ],
-    ['something',             'blah',          23,      1,      '2015-02-15'  ],
-    ['sfdgsdgf',              'bHHlah',        7.4,     0,      '2011-02-06'  ],
-    ['something',             'blah',          23,      1,      '2009-06-29'  ],
-    ['Table',                 'Apple',         23,      0,      '1987-05-01'  ],
-    ['Blah foo run',          'blah',          23,      1,      '1783-10-31'  ],
-    ['something',             'joe',           23,      1,      '1944-06-04'  ],
+    [qw/string1                string2         number       bool    date/         ],
+    ['something',             'blah',          23,          1,      '2015-02-15'  ],
+    ['sfdgsdgf',              'bHHlah',        7.4,         0,      '2011-02-06'  ],
+    ['something',             'blah',          23,          1,      '2009-06-29'  ],
+    ['Table',                 'Apple',         10023.5,     0,      '1987-05-01'  ],
+    ['Blah foo run',          'blah',          0.0034,      1,      '1783-10-31'  ],
+    ['something',             'joe',           90,          0,      '1944-06-04'  ],
   
   ]);
 
