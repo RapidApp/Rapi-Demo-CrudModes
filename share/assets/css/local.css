@@ -13,6 +13,32 @@
   height:100%;
 }
 
+.alpha-dv .store-btn-wrap {
+  font-size:0.85em;
+  padding-top:4px;
+  text-align: center;
+}
+
+.alpha-dv div.rows-wrap {
+  position: absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:22px;
+  overflow: auto;
+  border-bottom: 1px solid #D0D0D0;
+
+}
+
+.alpha-dv div.foot-wrap {
+  position: absolute;
+  height:22px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  overflow:hidden;
+}
+
 .alpha-dv div.alpha-row {
   display: inline-block;
   margin:7px;
