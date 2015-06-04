@@ -35,7 +35,7 @@ has '+tt_file', default => 'templates/alpha_dv.html';
 
 has '+tt_include_path', default => sub {
   my $self = shift;
-  dir( $self->app->ra_builder->share_dir )->stringify;
+  dir( $self->app->ra_builder->data_dir )->stringify;
 };
 
 sub BUILD {
