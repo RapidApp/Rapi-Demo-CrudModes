@@ -63,6 +63,31 @@ sub _build_base_config {
               create => 1, update => 0, destroy => 0
             }
           }
+        },
+        
+        # Default - everything instant:
+        'alpha_dv' => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
+        
+        # Alternate -  nothing instant
+        'alpha_dv_save' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
+          params => {
+            confirm_on_destroy => 1,
+            persist_immediately => {
+              create => 0, update => 0, destroy => 0
+            }
+          }
+        },
+        
+         # Mixed - only 'create' instant
+        'alpha_dv_mixed' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
+          params => {
+            confirm_on_destroy => 0,
+            persist_immediately => {
+              create => 1, update => 0, destroy => 0
+            }
+          }
         }
 
       }
