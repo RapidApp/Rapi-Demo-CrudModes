@@ -70,6 +70,7 @@ sub _build_base_config {
     'Plugin::RapidApp::TabGui' => {
       navtree_init_width => 180,
       dashboard_url      => '/tple/dashboard',
+      navtree_disabled   => 1
     },
 
     'Controller::RapidApp::Template' => {
