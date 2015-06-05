@@ -30,5 +30,12 @@ has 'ResultSource', is => 'ro', lazy => 1, default => sub {
 };
 
 
+sub BUILD {
+  my $self = shift;
+  
+  # Show full text with the store buttons (default is false)
+  $self->apply_extconfig( show_store_button_text => \1 );
+}
+
 1;
 

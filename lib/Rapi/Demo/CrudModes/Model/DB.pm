@@ -33,6 +33,10 @@ __PACKAGE__->config(
 
       }, # (grid_params)
       TableSpecs => {
+        Alpha => {
+          title       => 'Alpha Row',
+          title_multi => 'Alpha Rows',
+        }
       
       }, # (TableSpecs)
    } # (RapidDbic)

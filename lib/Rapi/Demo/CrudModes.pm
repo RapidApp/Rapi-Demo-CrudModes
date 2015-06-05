@@ -35,60 +35,70 @@ sub _build_base_config {
   
   $self->_init_local_data if $self->clear_data_dir || ! (-d $self->data_dir);
 
+  my $module_params = {
+    
+    # Everything instant (same as default):
+    instant => {
+      use_add_form  => 0,
+      use_edit_form => 1,
+      persist_immediately => {
+        create => 1, update => 1, destroy => 1
+      },
+      confirm_on_destroy => 0
+    },
+    
+    # Alternate -  nothing instant
+    save => {
+      use_add_form  => 0,
+      use_edit_form => 0,
+      persist_immediately => {
+        create => 0, update => 0, destroy => 0
+      },
+      confirm_on_destroy => 1,
+    },
+    
+    # Mixed - only 'create' instant
+    mixed => {
+      use_add_form  => 0,
+      use_edit_form => 0,
+      persist_immediately => {
+        create => 1, update => 0, destroy => 0
+      },
+      confirm_on_destroy => 1,
+    }
+  };
+
   return {
     'RapidApp' => {
       local_assets_dir => $self->_assets_dir,
       load_modules => {
-        
-        # Default - everything instant:
-        'alpha_grid' => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
-        
-        # Alternate -  nothing instant
+      
+        'alpha_grid_instant' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
+          params => $module_params->{instant}
+        },
         'alpha_grid_save' => {
           class  => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
-          params => {
-            confirm_on_destroy => 1,
-            persist_immediately => {
-              create => 0, update => 0, destroy => 0
-            }
-          }
+          params => $module_params->{save}
         },
-        
-         # Mixed - only 'create' instant
         'alpha_grid_mixed' => {
           class  => 'Rapi::Demo::CrudModes::Module::Alpha::Grid',
-          params => {
-            confirm_on_destroy => 0,
-            persist_immediately => {
-              create => 1, update => 0, destroy => 0
-            }
-          }
+          params => $module_params->{mixed}
         },
         
-        # Default - everything instant:
-        'alpha_dv' => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
         
-        # Alternate -  nothing instant
+        'alpha_dv_instant' => {
+          class  => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
+          params => $module_params->{instant}
+        },
         'alpha_dv_save' => {
           class  => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
-          params => {
-            confirm_on_destroy => 1,
-            persist_immediately => {
-              create => 0, update => 0, destroy => 0
-            }
-          }
+          params => $module_params->{save}
         },
-        
-         # Mixed - only 'create' instant
         'alpha_dv_mixed' => {
           class  => 'Rapi::Demo::CrudModes::Module::Alpha::DV',
-          params => {
-            confirm_on_destroy => 0,
-            persist_immediately => {
-              create => 1, update => 0, destroy => 0
-            }
-          }
-        }
+          params => $module_params->{mixed}
+        },
 
       }
     },

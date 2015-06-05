@@ -44,8 +44,11 @@ sub BUILD {
   $self->apply_extconfig( 
     itemSelector  => 'div.alpha-row',
     selectedClass => 'selected',
+    show_store_button_text => \1
   );
 }
+
+
 
 1;
 
