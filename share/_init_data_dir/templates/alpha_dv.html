@@ -52,18 +52,38 @@
   </div>
 
   </tpl>
+
 </div>
 
 
 <div class="foot-wrap">
+
+
+
   <div class="store-btn-wrap">
+  
     [% r.store_button.add    %] |
     [% r.store_button.edit   %] |  
     [% r.store_button.delete %] | 
     [% r.store_button.reload %] | 
     [% r.store_button.save   %] | 
     [% r.store_button.undo   %]
+    
+    <div style="float:right;">
+      <a 
+        class="crud-opts with-inline-icon ra-icon-collapse-all"
+        title="Show crud options" 
+        onclick="RA.ux.CM.showCrudEl('Configured CRUD Options',this);"
+      ><i>CRUD Options</i></a>
+      <div style="display:none;">
+        <pre>[% r.AppDV.dump_crud_options() %]</pre>
+      </div>
+    </div>
+    
+    
   </div>
 </div>
+
+
 
 </div>
