@@ -2,12 +2,6 @@
 
 <div class="alpha-dv">
 
-<!--
-<a title="Reload Tab" class="ra-icon-refresh-tiny ra-autopanel-reloader">
-  <span class="ra-autopanel-reloader">Reload Tab</span>
-</a>
--->
-
 <div class="rows-wrap">
 
   <tpl for=".">
@@ -17,7 +11,7 @@
   <table style="width:100%;">
     <tr>
       <td class="row-id" style="width:6%;">
-        [% r.autofield.id %]
+        {id}
       </td>
       <td style="width:48%;">
         <div class="col" style="font-size:1.1em;padding-top:10px;">
@@ -55,12 +49,12 @@
 
 </div>
 
-
 <div class="foot-wrap">
-
-
-
   <div class="store-btn-wrap">
+  
+    <a style="float:left;padding-left:8px;"
+       class="ra-icon-refresh-tiny ra-autopanel-reloader"
+    >Reload Panel</a>
   
     [% r.store_button.add    %] |
     [% r.store_button.edit   %] |  
@@ -70,20 +64,16 @@
     [% r.store_button.undo   %]
     
     <div style="float:right;">
-      <a 
-        class="crud-opts with-inline-icon ra-icon-collapse-all"
-        title="Show crud options" 
-        onclick="RA.ux.CM.showCrudEl('Configured CRUD Options',this);"
+      <a class="crud-opts with-inline-icon ra-icon-collapse-all"
+         title="Show crud options" 
+         onclick="RA.ux.CM.showCrudEl('Configured CRUD Options',this);"
       ><i>CRUD Options</i></a>
       <div style="display:none;">
         <pre>[% r.AppDV.dump_crud_options() %]</pre>
       </div>
     </div>
     
-    
   </div>
 </div>
-
-
 
 </div>

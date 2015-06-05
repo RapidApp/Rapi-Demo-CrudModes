@@ -21,8 +21,9 @@ sub BUILD {
   my $self = shift;
   
   $self->apply_extconfig( 
-    itemSelector  => 'div.alpha-row',
-    selectedClass => 'selected',
+    itemSelector    => 'div.alpha-row',
+    selectedClass   => 'selected',
+    scrollNodeClass => 'rows-wrap' 
   );
 }
 
