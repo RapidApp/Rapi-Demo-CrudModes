@@ -57,10 +57,10 @@ sub _build_base_config {
       confirm_on_destroy => 1,
     },
     
-    # Mixed - only 'update' requires save, but use add form
+    # Mixed - only 'update' requires save, but use add form + edit form
     mixed => {
       use_add_form  => 1,
-      use_edit_form => 0,
+      use_edit_form => 1,
       persist_immediately => {
         create => 1, update => 0, destroy => 1
       },
