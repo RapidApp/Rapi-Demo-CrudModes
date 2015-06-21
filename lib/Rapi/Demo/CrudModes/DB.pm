@@ -29,6 +29,42 @@ sub _auto_populate {
     ['something',             'joe',           90,          0,      '1944-06-04'  ],
   
   ]);
+  
+  $self->resultset('Bravo')->populate([ 
+  
+    { title => 'Mustang',  price => 3500        },
+    { title => 'Corvette', price => 7200.32     },
+    
+    { 
+      title => 'Ferrari',  
+      price => 234123.54, 
+      bravo_notes => [
+        
+        { text => 'When bravo table was added', timestamp => '2015-06-20 22:20' },
+        { text => 'Comment two' },
+        { text => 'sdfgsd' },
+        { text => 'Foo' },
+        { text => undef },
+        { text => 'blarg' }
+        
+      ]
+    },
+    
+    { 
+      title => 'F-150',  
+      bravo_notes => [
+        
+        { text => 'DDEJFFE fgb' },
+        { text => 'dfgdfgdfgdfg' },
+        { text => '00sdf #$6' },
+        { text => 'w00t!!!' }
+        
+      ]
+    },
+    
+    { title => 'Mango' }
+    
+  ]);
 
 
 }

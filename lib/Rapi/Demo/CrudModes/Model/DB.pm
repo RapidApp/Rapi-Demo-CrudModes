@@ -30,13 +30,23 @@ __PACKAGE__->config(
             creatable_colspec   => ['*'],
             destroyable_relspec => ['*']
          }, # ('*defaults')
-
+         BravoNote => {
+            # Turning off the add form will cause adding items to fail, except
+            # when the grid is opened via link from the parent Bravo grid:
+            use_add_form => 0
+         }
       }, # (grid_params)
       TableSpecs => {
         Alpha => {
           title       => 'Alpha Row',
           title_multi => 'Alpha Rows',
-        }
+        },
+        Bravo => {
+          title             => 'Bravo',
+          title_multi       => 'Bravos',
+          display_column    => 'title',
+          auto_editor_type  => 'combo',
+        },
       
       }, # (TableSpecs)
    } # (RapidDbic)
