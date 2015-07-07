@@ -5,7 +5,7 @@ use warnings;
 
 # ABSTRACT: RapidApp demo application
 
-use RapidApp 1.0502_01;
+use RapidApp 1.0600;
 
 use Moose;
 extends 'RapidApp::Builder';
@@ -21,7 +21,7 @@ use Cwd;
 
 my $Bin = file($0)->parent; # Like FindBin
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 has '+base_appname', default => sub { 'CrudModes::Demo' };
 has '+debug',        default => sub {1};
